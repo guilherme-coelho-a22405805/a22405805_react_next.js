@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 // @ts-ignore: missing module/type declarations for side-effect CSS import
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,12 @@ export default function RootLayout({
         
         <header className="flex flex-col items-center">
           <h1>React & Next.js</h1>
+          <nav className="flex gap-4">
+            <Link href="/">Intro</Link>
+            <Link href="/sobre">Sobre</Link>
+            <Link href="/caracteristicas">Características</Link>
+            <Link href="/tecnologias">Tecnologias</Link>
+          </nav>
         </header>
         
         <main className="bg-blue-200 p-5 rounded-2xl max-w-2xl min-h-[70vh]">
