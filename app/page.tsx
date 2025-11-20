@@ -1,4 +1,5 @@
 import  MagiaDoJSX from '@/app/componentes/MagiaDoJSX/MagiaDoJSX'
+import DescricaoProjetos from '@/app/componentes/DescricaoProjetos/DescricaoProjetos'
 import Link from 'next/link'
 
 export default function page() {
@@ -11,9 +12,13 @@ export default function page() {
           <nav className = "flex gap-4">
             <Link href="/">Intro</Link>
             <Link href="/sobre">Sobre</Link>
+            <Link href="/DescricaoProjetos">Projetos</Link>
           </nav>
+
         </header>
+
         <MagiaDoJSX/>
+        <DescricaoProjetos/>
 
     </div>
   )
