@@ -13,13 +13,13 @@
   },
   {
     "title": "Tailwind CSS",
-    "image": "tailwind.svg",
+    "image": "tailwind.png",
     "description": "Framework utilitária que permite estilizar páginas rapidamente.",
     "rating": 3
   },
   {
     "title": "JavaScript",
-    "image": "javascript.svg",
+    "image": "javascript-1.svg",
     "description": "Linguagem de programação essencial para interatividade no front-end.",
     "rating": 2
   },
@@ -31,19 +31,19 @@
   },
   {
     "title": "JSON",
-    "image": "json.svg",
+    "image": "json-file.svg",
     "description": "Formato leve para trocar dados entre serviços e aplicações.",
     "rating": 5
   },
   {
     "title": "API RESTful",
-    "image": "api.svg",
+    "image": "api.png",
     "description": "Padrão utilizado para criar serviços web escaláveis.",
     "rating": 5
   },
   {
     "title": "Swagger",
-    "image": "swagger.svg",
+    "image": "swagger.png",
     "description": "Ferramenta para documentação e teste de APIs.",
     "rating": 5
   },
@@ -55,31 +55,31 @@
   },
   {
     "title": "Codespaces",
-    "image": "codespaces.svg",
+    "image": "codesaces.png",
     "description": "Ambiente de desenvolvimento na cloud ligado ao GitHub.",
     "rating": 4
   },
   {
     "title": "GitHub Pages",
-    "image": "githubpages.svg",
+    "image": "pages.png",
     "description": "Serviço gratuito para alojar websites estáticos.",
     "rating": 5
   },
   {
     "title": "React.js",
-    "image": "react.svg",
+    "image": "react.png",
     "description": "Biblioteca JavaScript para criar interfaces interativas.",
     "rating": 5
   },
   {
     "title": "Next.js",
-    "image": "nextjs.svg",
+    "image": "nex.svg",
     "description": "Framework baseada em React para aplicações modernas.",
     "rating": 5
   },
   {
     "title": "Vercel",
-    "image": "vercel.svg",
+    "image": "vercel.webp",
     "description": "Plataforma de deploy otimizada para projetos Next.js.",
     "rating": 4
   }
