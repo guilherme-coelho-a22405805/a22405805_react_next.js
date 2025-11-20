@@ -5,7 +5,8 @@ export default function MagiaDoSJX() {
     return (
         <div className="bg-amber-200 p-2 m-3 rounded-x1 text-center">
             <p>Este é o meu componente MagiaDoJSX.</p>
-            <p>Um componente é uma função que retorna JSX.</p>
+            <p>Um componente é uma função que retorna JSX - {magia}.</p>
+            <p>Os componentes são usados em {tecnologias}.</p>
         </div>
     )
 }
