@@ -6,11 +6,11 @@ export default function DescricaoProjetos() {
       <p className="text-lg">
         Ao longo desta disciplina desenvolvi vários projetos interativos, tanto
         em HTML/CSS como JavaScript e React.  
-        Podes ver todos os meus projetos no meu GitHub Pages:
+        Podes ver todos os meus projetos entre nestes links ou no meu Git em:
         <a
           href="https://github.com/guilherme-coelho-a22405805"
           target="_blank"
-          className="text-blue-600 underline ml-2"
+          className="text-black underline ml-2"
         >
           GitHub
         </a>
