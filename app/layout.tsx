@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 // @ts-ignore: missing module/type declarations for side-effect CSS import
 import "./globals.css";
 import Link from "next/link";
+import Relogio from "@/components/Relogio/Relogio"; // <--- 1. Importar o componente
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,8 @@ export default function RootLayout({
             <Link href="/caracteristicas">Características</Link>
             <Link href="/tecnologias">Tecnologias</Link>
             <Link href="/projetos">Projetos</Link>
+            <Link href="/contador">Contador</Link>
+            <Link href="/input">Input</Link>
           </nav>
         </header>
         
@@ -44,7 +47,9 @@ export default function RootLayout({
           {children}
         </main>
         
-        <footer>DIW {data.getFullYear()}</footer>
+        <footer>DIW {data.getFullYear()}
+          <Relogio /> 
+        </footer>
 
       </body>
     </html>
