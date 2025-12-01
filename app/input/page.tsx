@@ -3,18 +3,12 @@
 import { useState } from 'react';
 
 export default function InputPage() {
-  // 1. Estado para o Input de Texto (Echo)
   const [texto, setTexto] = useState("");
-
-  // 2. Estado para o Seletor
   const [tecnologia, setTecnologia] = useState("React");
-
-  // 3. Estados para a Lista de Tarefas
   const [tarefas, setTarefas] = useState<string[]>([]);
   const [novaTarefa, setNovaTarefa] = useState("");
 
   // --- Funções de Lógica ---
-
   function adicionar() {
     if (novaTarefa.trim() === "") return;
     setTarefas([...tarefas, novaTarefa]);
@@ -49,7 +43,6 @@ export default function InputPage() {
 
       <div className="w-full max-w-md flex flex-col gap-6 px-4">
         
-        {/* 1. Cartão Eco de Texto */}
         <section className="bg-white p-6 rounded-xl shadow-lg">
           <h3 className="font-bold text-gray-700 mb-2 border-b pb-2">1. Escreve</h3>
           <div className="flex flex-col gap-3">
@@ -66,7 +59,6 @@ export default function InputPage() {
           </div>
         </section>
 
-        {/* 2. Cartão Seletor */}
         <section className="bg-white p-6 rounded-xl shadow-lg">
           <h3 className="font-bold text-gray-700 mb-2 border-b pb-2">2. Seletor</h3>
           <div className="flex flex-col gap-3">
@@ -89,7 +81,6 @@ export default function InputPage() {
           </div>
         </section>
 
-        {/* 3. Cartão Lista de Tarefas */}
         <section className="bg-white p-6 rounded-xl shadow-lg">
           <h3 className="font-bold text-gray-700 mb-2 border-b pb-2">3. Lista de Tarefas</h3>
           

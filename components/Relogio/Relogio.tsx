@@ -16,14 +16,12 @@ export default function Relogio() {
     // Atualiza logo no início para não esperar 1 segundo
     atualizar();
 
-    // 2. Define o intervalo de 1 segundo (1000ms) [cite: 1984]
+    // 2. Define o intervalo de 1 segundo (1000ms) 
     const id = setInterval(atualizar, 1000);
 
-    // 3. Limpeza (Cleanup) quando o componente desmonta [cite: 1988]
+    // 3. Limpeza (Cleanup) quando o componente desmonta 
     return () => clearInterval(id);
   }, []);
-
-  // Renderiza apenas quando a hora estiver definida (evita erros de hidratação)
   if (!hora) return null;
 
   return (

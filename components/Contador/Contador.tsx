@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-// 1. Importamos o CSS como um objeto 'styles'
 import styles from './contador.module.css';
 
 export default function Contador() {
@@ -33,7 +32,6 @@ export default function Contador() {
     if (valor >= 8) corTexto = 'green';
 
     return (
-        // 2. Usamos styles.card em vez de "card"
         <div className={styles.card}>
             <h2>Laboratório 10: Contador</h2>
             
@@ -42,7 +40,6 @@ export default function Contador() {
             </div>
 
             <div className={styles.btnGroup}>
-                {/* Nota: Para usar duas classes juntas, usamos esta sintaxe com crase `` */}
                 <button 
                     className={`${styles.btn} ${styles.btnDec}`} 
                     onClick={() => atualizaValor(valor - 1)}>
