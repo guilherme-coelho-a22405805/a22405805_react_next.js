@@ -1,54 +1,44 @@
-'use client'
-import { useState, useEffect } from 'react';
+'use client';
+
+import React from 'react';
 import useSWR from 'swr';
-import Image from 'next/image';
+import { useParams } from 'next/navigation';
+// CORREÇÃO: Confirma se o ficheiro está em 'models' ou na raiz
+import { Product } from '@/interfaces'; 
+import ProdutoDetalhe from '@/components/ProdutoCard/ProdutoCard';
+// CORREÇÃO: Confirma se o caminho da pasta está correto (maiúsculas/minúsculas)
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function ProdutoDetalhe({ params }: { params: { id: string } }) {
-  const { data: product, isLoading } = useSWR(`https://deisishop.pythonanywhere.com/products/${params.id}`, fetcher);
-  const [noCarrinho, setNoCarrinho] = useState(false);
+const fetcher = (url: string) => fetch(url).then((res) => {
+    if (!res.ok) throw new Error('Erro ao carregar o produto');
+    return res.json();
+});
 
-  // Verificar se já está no carrinho ao carregar
-  useEffect(() => {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
-    if (carrinho.includes(params.id)) setNoCarrinho(true);
-  }, [params.id]);
+export default function ProdutoPage() {
+    const params = useParams();
+    const id = params.id;
 
-  // Função para alternar estado (Adicionar/Remover)
-  const toggleCarrinho = () => {
-    let carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
-    
-    if (noCarrinho) {
-      carrinho = carrinho.filter((id: string) => id !== params.id); // Remover
-    } else {
-      carrinho.push(params.id); // Adicionar
-    }
-    
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    setNoCarrinho(!noCarrinho);
-  };
+    const { data, error, isLoading } = useSWR<Product>(
+        id ? `https://deisishop.pythonanywhere.com/products/${id}` : null,
+        fetcher
+    );
 
-  if (isLoading) return <div>A carregar produto...</div>;
-  if (!product) return <div>Produto não encontrado.</div>;
+    if (isLoading) return (
+        <div className="min-h-screen flex justify-center items-center bg-gray-50">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600"></div>
+        </div>
+    );
 
-  return (
-    <div className="flex flex-col md:flex-row gap-8 p-8">
-      <div className="relative w-full md:w-1/2 h-96">
-        <Image src={product.image} alt={product.title} fill className="object-contain" />
-      </div>
-      <div className="md:w-1/2">
-        <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-        <p className="text-gray-700 mb-6">{product.description}</p>
-        <div className="text-2xl text-green-600 font-bold mb-4">{product.price} €</div>
-        
-        <button 
-          onClick={toggleCarrinho}
-          className={`px-6 py-2 rounded text-white ${noCarrinho ? 'bg-red-500' : 'bg-blue-500'}`}
-        >
-          {noCarrinho ? 'Remover do Carrinho' : 'Adicionar ao Carrinho'}
-        </button>
-      </div>
-    </div>
-  );
+    if (error || !data) return (
+        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 text-red-500 gap-4">
+            <p className="text-xl font-bold">Produto não encontrado.</p>
+            <a href="/produtos" className="text-blue-600 underline">Voltar</a>
+        </div>
+    );
+
+    return (
+        <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+            <ProdutoDetalhe produto={data} />
+        </main>
+    );
 }
