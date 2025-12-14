@@ -98,7 +98,7 @@ export default function ProdutosPage() {
 
     return (
         <main className="min-h-screen bg-gray-50 p-6">
-            <h1 className="text-3xl font-bold mb-6 text-center">DEISI Shop</h1>
+            <h1 className="text-black text-3xl font-bold mb-6 text-center">DEISI Shop</h1>
 
             <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
                 {/* Esquerda: Produtos */}
@@ -106,9 +106,9 @@ export default function ProdutosPage() {
                     <div className="flex flex-col md:flex-row gap-4 mb-6">
                         <input 
                             type="text" placeholder="Pesquisar..." value={search} onChange={(e) => setSearch(e.target.value)}
-                            className="flex-grow p-3 border rounded-lg shadow-sm"
+                            className="text-black flex-grow p-3 border rounded-lg shadow-sm"
                         />
-                        <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)} className="p-3 border rounded-lg bg-white">
+                        <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)} className="text-black p-3 border rounded-lg bg-white">
                             <option value="default">Ordenar...</option>
                             <option value="price-asc">Preço: Menor</option>
                             <option value="price-desc">Preço: Maior</option>
@@ -124,7 +124,7 @@ export default function ProdutosPage() {
 
                 {/* Direita: Carrinho */}
                 <div className="w-full lg:w-80 bg-white p-6 rounded-xl shadow-lg h-fit sticky top-6">
-                    <h2 className="text-2xl font-bold mb-4 border-b pb-2">Carrinho</h2>
+                    <h2 className="text-black text-2xl font-bold mb-4 border-b pb-2">Carrinho</h2>
                     
                     {cart.length === 0 ? (
                         <p className="text-gray-500">Vazio.</p>
