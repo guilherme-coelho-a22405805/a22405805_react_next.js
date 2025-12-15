@@ -1,21 +1,31 @@
-"use client";
+"use client"; 
 import { useState, useEffect } from "react";
 
+// PROPS (TypeScript):
+// Recebemos 'title' como propriedade. Isto é crucial para a REUTILIZAÇÃO.
+// O 'title' vai servir como ID único para guardar os likes de cada projeto separadamente.
 export default function ContadorPersonalizado({ title }: { title: string }) {
+  
+  // Estado local para atualização imediata da UI
   const [likes, setLikes] = useState(0);
 
-  // 1. Carregar do LocalStorage ao iniciar
+  // 1. EFEITO DE LEITURA 
+  // Corre quando o componente monta OU quando o 'title' muda.
   useEffect(() => {
     const stored = localStorage.getItem(`likes-${title}`);
+    
     if (stored) {
-      setLikes(parseInt(stored));
+      setLikes(parseInt(stored)); // Converte string para número
     }
   }, [title]);
 
-  // 2. Atualizar estado e LocalStorage ao clicar
+  // 2. FUNÇÃO DE ATUALIZAÇÃO
   const handleClick = () => {
     const novoValor = likes + 1;
+    
+    // Atualiza o estado visual
     setLikes(novoValor);
+    
     localStorage.setItem(`likes-${title}`, novoValor.toString());
   };
 

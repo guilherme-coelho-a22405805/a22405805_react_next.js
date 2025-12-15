@@ -1,5 +1,6 @@
 import Projeto from "@/components/Projeto/Projeto";
 
+// Componente simples em que guardamos projetos e os seus respetivos links 
 export default function DescricaoProjetos() {
   return (
     <section className="space-y-6">

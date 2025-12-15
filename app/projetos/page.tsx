@@ -1,5 +1,6 @@
 import DescricaoProjetos from "@/components/DescricaoProjetos/DescricaoProjetos";
 
+// Página Base para receber os projetos 
 export default function ProjetosPage() {
   return (
     <main className="p-8">
