@@ -1,7 +1,4 @@
-# Lab 8 -> https://a22405805reactnextjsvercel.vercel.app
-
-
-# Lab 9 -> https://a22405805reactnextjslab9.vercel.app
+# https://a22405805reactnextjs.vercel.app/
 
 
 
