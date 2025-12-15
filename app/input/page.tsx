@@ -106,7 +106,7 @@ export default function InputPage() {
             <ul className="space-y-2">
               {tarefas.map((t, index) => (
                 <li key={index} className="flex justify-between items-center bg-gray-50 p-2 rounded border border-gray-200">
-                  {/* Aqui garanto a cor do texto da tarefa */}
+                  
                   <span className="text-gray-800 font-medium break-all mr-2">• {t}</span>
                   
                   <div className="flex gap-2 shrink-0">
