@@ -49,7 +49,7 @@ export default function ProdutoCard({ produto, adicionarAoCarrinho, removerDoCar
                 <div className="mt-auto pt-2 flex flex-col gap-2">
                     <div className="flex justify-between items-center">
                         <span className="text-lg font-extrabold text-black">
-                            {produto.price ? produto.price.toFixed(2) : "0.00"} €
+                            {produto.price ? produto.price : "0.00"} €
                         </span>
                     </div>
 
